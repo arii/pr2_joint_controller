@@ -1,0 +1,15 @@
+ my_controller_name:
+    type: my_controller_pkg/MyControllerPlugin
+    joint: r_shoulder_pan_joint
+    max_effort: 4
+    ctrl_type: position
+    pid_pos:
+      p: 2400.0
+      i: 18.0
+      d: 800.0
+      i_clamp: 4.0
+    pid_vel: &shoulder_pan_velocity_gains
+      p: 18.0
+      i: 4.67
+      d: 0.0
+      i_clamp: 100.0

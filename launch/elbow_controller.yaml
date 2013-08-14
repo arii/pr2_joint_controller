@@ -1,0 +1,6 @@
+elbow_flex_effort_controller: {joint: r_elbow_flex_joint, type: robot_mechanism_controllers/JointEffortController}
+rosdistro: fuerte
+roslaunch:
+  uris: {host_ari__39349: 'http://ari:39349/'}
+rosversion: 1.8.11
+run_id: e323b7a6-dea0-11e2-aabf-e840f2d22375

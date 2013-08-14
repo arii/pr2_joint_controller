@@ -1,0 +1,208 @@
+r_shoulder_pan_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_shoulder_pan_joint
+  ctrl_type: position
+  max_effort: &upper_arm 10.0
+  pid_vel: &shoulder_pan_gains
+    p: 18.0
+    i: 4.67
+    d: 0.0
+    i_clamp: 100.0
+  pid_pos: &shoulder_pan_position_gains
+    p: 2400.0
+    d: 18.0
+    i: 800.0
+    i_clamp: 4.0
+
+
+r_shoulder_lift_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_shoulder_lift_joint
+  ctrl_type: position
+  max_effort: *upper_arm 
+  pid_vel: &shoulder_lift_gains
+    p: 10.0
+    i: 5.67
+    d: 0
+    i_clamp: 100.0
+  pid_pos: &shoulder_lift_position_gains
+    p: 1200.0
+    d: 10.0
+    i: 700.0
+    i_clamp: 4.0
+
+r_upper_arm_roll_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_upper_arm_roll_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: &upper_arm_roll_gains
+    p: 6.0
+    i: 42.9
+    d: 0
+    i_clamp: 100.0
+  pid_pos: &upper_arm_roll_position_gains
+    p: 1000.0
+    d: 6.0
+    i: 600.0
+    i_clamp: 4.0
+
+r_elbow_flex_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_elbow_flex_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: &elbow_flex_gains
+    p: 4.0
+    i: 20.0
+    d: 0
+    i_clamp: 100.0
+  pid_pos: &elbow_flex_position_gains
+    p: 700.0
+    d: 4.0
+    i: 450.0
+    i_clamp: 4.0
+
+
+r_forearm_roll_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_forearm_roll_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: &forearm_roll_gains
+    p: 6.0
+    i: 15.0
+    d: 0
+    i_clamp: 100.0
+  pid_pos: &forearm_roll_position_gains
+    p: 300.0
+    d: 6.0
+    i: 300.0
+    i_clamp: 2.0
+
+
+r_wrist_flex_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_wrist_flex_joint
+  ctrl_type: position
+  max_effort: &lower_arm 7
+  pid_vel: &wrist_flex_gains
+    p: 4.0
+    i: 25.0
+    d: 0
+    i_clamp: 100.0
+  pid_pos: &wrist_flex_position_gains
+    p: 300.0
+    d: 4.0
+    i: 300.0
+    i_clamp: 2.0
+
+
+r_wrist_roll_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_wrist_roll_joint
+  ctrl_type: position
+  max_effort: *lower_arm
+  pid_vel: &wrist_roll_gains
+    p: 4.0
+    i: 25.0
+    d: 0
+    i_clamp: 100.0
+  pid_pos: &wrist_roll_position_gains
+    p: 300.0
+    d: 4.0
+    i: 300.0
+    i_clamp: 2.0
+
+
+l_shoulder_pan_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_shoulder_pan_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: *shoulder_pan_gains
+  pid_pos: *shoulder_pan_position_gains
+
+l_shoulder_lift_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_shoulder_lift_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: *shoulder_lift_gains
+  pid_pos: *shoulder_lift_position_gains
+
+l_upper_arm_roll_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_upper_arm_roll_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: *upper_arm_roll_gains
+  pid_pos: *upper_arm_roll_position_gains
+
+l_elbow_flex_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_elbow_flex_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: *elbow_flex_gains
+  pid_pos: *elbow_flex_position_gains
+
+l_forearm_roll_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_forearm_roll_joint
+  ctrl_type: position
+  max_effort: *upper_arm
+  pid_vel: *forearm_roll_gains
+  pid_pos: *forearm_roll_position_gains
+
+l_wrist_flex_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_wrist_flex_joint
+  ctrl_type: position
+  max_effort: *lower_arm
+  pid_vel: *wrist_flex_gains
+  pid_pos: *wrist_flex_position_gains
+
+l_wrist_roll_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_wrist_roll_joint
+  ctrl_type: position
+  max_effort: *lower_arm
+  pid_vel: *wrist_roll_gains
+  pid_pos: *wrist_roll_position_gains
+
+
+torso_lift_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: torso_lift_joint
+  ctrl_type: position
+  max_effort: 8000
+  pid_vel: &torso_lift_gains
+    p: 2000000.0
+    d: 0.0
+    i: 1000.0
+    i_clamp: 1200.0
+  pid_pos:
+    p: 10000000.0
+    d: 1000000.0
+    i: 0.0
+    i_clamp: 0.0
+
+r_gripper_position_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: r_gripper_joint
+  ctrl_type: position
+  max_effort: &gripper 800
+  pid_pos: &gripper_position_gains
+    p: 10000.0
+    d: 1000.0
+    i: 0.0
+    i_clamp: 0.0
+
+
+l_gripper_position_controller:
+  type: my_controller_pkg/MyControllerPlugin
+  joint: l_gripper_joint
+  pid_pos: *gripper_position_gains
+  ctrl_type: position
+  max_effort: *gripper

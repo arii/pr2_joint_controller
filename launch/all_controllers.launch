@@ -1,0 +1,26 @@
+<launch>
+<!-- kill default arm controllers -->
+<node name="$(anon foo)" pkg="my_controller_pkg" type="kill_other_controllers.py" />
+
+<!-- load parameter file -->
+<rosparam file="$(find my_controller_pkg)/launch/all_controllers.yaml" command="load" />
+
+<node pkg="pr2_controller_manager" type="spawner" args="r_shoulder_pan_controller" name="my_controller_spawner_r_shoulder_pan_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="r_shoulder_lift_controller" name="my_controller_spawner_r_shoulder_lift_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="r_upper_arm_roll_controller" name="my_controller_spawner_r_upper_arm_roll_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="r_elbow_flex_controller" name="my_controller_spawner_r_elbow_flex_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="r_forearm_roll_controller" name="my_controller_spawner_r_forearm_roll_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="r_wrist_flex_controller" name="my_controller_spawner_r_wrist_flex_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="r_wrist_roll_controller" name="my_controller_spawner_r_wrist_roll_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_shoulder_pan_controller" name="my_controller_spawner_l_shoulder_pan_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_shoulder_lift_controller" name="my_controller_spawner_l_shoulder_lift_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_upper_arm_roll_controller" name="my_controller_spawner_l_upper_arm_roll_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_elbow_flex_controller" name="my_controller_spawner_l_elbow_flex_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_forearm_roll_controller" name="my_controller_spawner_l_forearm_roll_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_wrist_flex_controller" name="my_controller_spawner_l_wrist_flex_controller" />
+<node pkg="pr2_controller_manager" type="spawner" args="l_wrist_roll_controller" name="my_controller_spawner_l_wrist_roll_controller" />
+
+
+
+</launch>
+
